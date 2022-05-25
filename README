@@ -1,0 +1,15 @@
+
+--------------------------------------------------------------
+bbcetc
+--------------------------------------------------------------
+
+It's a more adequate version of BbcEtc script(https://github.com/buturumus/bbcetc_sh).
+It downloads and slightly converts some hourly news podcasts. After that they are simple mp3s in some webserver's directory.
+This time it's written in Python and put to Docker container with simpliest Nginx web server config, so it can be easy deployed and run.
+Under the hood it uses requests module, python versions of youtube_dl and ffmpeg libs and dockerized cron. 
+
+=== Contacts ================
+e-mail:   buturumus@gmail.com
+telegram: @buturumus
+Alexander
+

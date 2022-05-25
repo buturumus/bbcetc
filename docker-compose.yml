@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+
+  nginx:
+    image: nginx:1.20.2-perl
+    volumes:
+      - ./www:/usr/share/nginx/html:ro
+    ports:
+      - 80:80
+
+  web:
+    build: .
+    volumes:
+      - .:/base
+    depends_on:
+      - nginx
+#   stdin_open: true    # debug
+#   tty: true           # debug
+#   command: bash -c 'env > /etc/environment && bash' # debug
+

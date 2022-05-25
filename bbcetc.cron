@@ -1,0 +1,2 @@
+10 * * * * env - `cat /etc/environment` python3 /base/bbcetc.py >> /dev/null 2>&1
+
