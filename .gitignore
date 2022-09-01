@@ -1,2 +1,4 @@
 Session.vim
 [._]*.sw[a-p]
+www/*
+tmp/*

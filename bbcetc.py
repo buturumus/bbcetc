@@ -34,7 +34,7 @@ class PodcastRemake():
             (
                 ffmpeg
                 .input(TMP_DIR + self.name + TMP_EXT)
-                .audio.filter('volume', 3)
+                .audio.filter('volume', self.vol_level)
                 .output(
                     WWW_DIR + self.name + OUT_EXT,
                     format='mp3',
@@ -85,7 +85,7 @@ class BbcPodcastRemake(PodcastRemake):
             (
                 ffmpeg
                 .input(TMP_DIR + self.name + TMP_EXT)
-                .audio.filter('volume', 3)
+                .audio.filter('volume', self.vol_level)
                 .output(
                     WWW_DIR + self.name + OUT_EXT,
                     format='mp3',
@@ -103,7 +103,7 @@ PROVS_DICTS = (
     {
         'name': 'bbc',
         'origin_url': 'https://www.bbc.co.uk/programmes/p002vsn1/episodes/player',
-        'vol_level': 3,
+        'vol_level': 4,
     },
     {
         'name': 'cbc',
