@@ -8,6 +8,9 @@ services:
       - ./www:/usr/share/nginx/html:ro
     ports:
       - 55580:80
+    sysctls:
+      - net.ipv6.conf.all.disable_ipv6=1
+      - net.ipv6.conf.default.disable_ipv6=1
 
   web:
     build: .
@@ -15,7 +18,10 @@ services:
       - .:/base
     depends_on:
       - nginx
-    stdin_open: true    # debug
-    tty: true           # debug
-    command: bash -c 'env > /etc/environment && bash' # debug
+    sysctls:
+      - net.ipv6.conf.all.disable_ipv6=1
+      - net.ipv6.conf.default.disable_ipv6=1
+    #stdin_open: true    # debug
+    #tty: true           # debug
+    #command: bash -c 'env > /etc/environment && bash' # debug
 
